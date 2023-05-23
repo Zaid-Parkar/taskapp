@@ -1,10 +1,10 @@
 <title>Tasks</title>
 
 <body>
-
+<?= $this->include("header") ?>
 
     <h1>Tasks</h1>
-
+<a href="<?= site_url("/tasks") ?>">&laquo;Back to index</a>
     <dl>
         <dt>ID</dt>
         <dd>
@@ -12,7 +12,7 @@
         </dd>
         <dt>Description</dt>
         <dd>
-            <?= $task['description'] ?>
+            <?= esc($task['description']) ?>
         </dd>
         <dt>Created at</dt>
         <dd>

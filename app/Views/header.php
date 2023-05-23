@@ -6,3 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    
 </head>
+<body>
+<?php if (session()->has('warning')):?>
+<div class="warning">
+<?= session('warning') ?> 
+</div>
+<?php endif; ?>
+<?php if (session()->has('info')):?>
+<div class="info">
+<?= session('info') ?> 
+</div>
+<?php endif; ?>
+</body>
