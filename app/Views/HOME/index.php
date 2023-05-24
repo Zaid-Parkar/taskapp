@@ -1,5 +1,11 @@
- <title>Home</title>
-<body>
-<h1>home</h1>
-</body>
-</html>
+<?= $this->extend("layouts/default") ?>
+
+<?= $this->section("title") ?>Home<?= $this->endSection() ?>
+
+<?= $this->section("content") ?>
+
+    <h1>Welcome</h1>
+
+    <a href="<?= site_url("/signup/new") ?>">Sign up</a>
+
+<?= $this->endSection() ?>
