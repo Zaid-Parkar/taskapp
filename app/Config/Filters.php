@@ -21,24 +21,24 @@ class Filters extends BaseConfig
         'honeypot'      => Honeypot::class,
         'invalidchars'  => InvalidChars::class,
         'secureheaders' => SecureHeaders::class,
+        'guest'    => \App\Filters\GuestFilter::class,
+        'login'    => \App\Filters\LoginFilter::class,
     ];
 
     /**
      * List of filter aliases that are always
      * applied before and after every request.
      */
-    public array $globals = [
-        'before' => [
-            // 'honeypot',
-            // 'csrf',
-            // 'invalidchars',
-        ],
-        'after' => [
-            'toolbar',
-            // 'honeypot',
-            // 'secureheaders',
-        ],
-    ];
+    public $globals = [
+		'before' => [
+			//'honeypot'
+			'csrf',
+		],
+		'after'  => [
+			'toolbar',
+			//'honeypot'
+		],
+	];
 
     /**
      * List of filter aliases that works on a
@@ -60,5 +60,7 @@ class Filters extends BaseConfig
      * Example:
      * 'isLoggedIn' => ['before' => ['account/*', 'profiles/*']]
      */
-    public array $filters = [];
+    public $filters = [
+        'login' => ['before' => ['tasks(/*)?']]
+	];
 }
