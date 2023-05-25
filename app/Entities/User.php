@@ -2,7 +2,7 @@
 
 namespace App\Entities;
 
-class User extends \CodeIgniter\Entity
+class User extends \CodeIgniter\Entity\Entity
 {
     public function verifyPassword($password)
     {    
