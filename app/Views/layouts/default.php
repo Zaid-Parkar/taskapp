@@ -6,33 +6,75 @@
     <title><?= $this->renderSection("title") ?></title>
     <link rel="stylesheet" type="text/css" href="<?= site_url('/css/auto-complete.css') ?>">
 </head>
+
+
 <body>
 
-    <a href="<?= site_url("/") ?>">Home</a>
 
-    <?php if (current_user()): ?>
+<nav class="navbar navbar-expand-lg  navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Taskapp</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link active" aria-current="page" href="<?= site_url("/") ?>">Home</a>
+        <?php if (!current_user()): ?>
+        <a class="nav-link" href="<?= site_url("/signup") ?>">Signup</a>
+        <a class="nav-link" href="<?= site_url("/login") ?>">Login</a>
+        <?php endif; ?>
+      </div>
+    </div>
+  <div class="d-flex">    <span class="navbar-text">
+
         
         <p>Hello <?= esc(current_user()->name) ?></p>
-        
-        <a href="<?= site_url("/profile/show") ?>">Profile</a>
-        
+      </span>
+       </div>
+    </div>
+
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+    <nav class="navbar navbar-expand-lg" style="background-color: #e3f2fd;height: 40px;" >
+  <div class="container-fluid">
+    <!-- <a class="navbar-brand" href="#">T</a> -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+      <?php if (current_user()): ?>
+        <a class="nav-link"  href="<?= site_url("/profile/show") ?>">Profile</a>
         <?php if (current_user()->is_admin): ?>
-            
-            <a href="<?= site_url("/admin/users") ?>">Users</a>
-            
+        <a class="nav-link" href="<?= site_url("/admin/users") ?>">Users</a>
         <?php endif; ?>
+        <a class="nav-link" href="<?= site_url("/tasks") ?>">Tasks</a>
+        <a class="nav-link" href="<?= site_url("/logout") ?>">Log out</a>
+        <?php endif; ?>
+      </div>
+    </div>
+    </div>
+
+</nav>
+
+    
         
-        <a href="<?= site_url("/tasks") ?>">Tasks</a>
+  
         
-        <a href="<?= site_url("/logout") ?>">Log out</a>
         
-    <?php else: ?>
         
-        <a href="<?= site_url("/signup") ?>">Sign up</a>    
-        
-        <a href="<?= site_url("/login") ?>">Log in</a>
-        
-    <?php endif; ?>
+   
 
     <?php if (session()->has('warning')): ?>
         <div class="warning">

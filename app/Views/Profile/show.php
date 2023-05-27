@@ -3,7 +3,8 @@
 <?= $this->section('title') ?>Profile<?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
-
+<section>
+    <div class="form" style="width:30%; margin: 2%;">
 <h1>Profile</h1>
 
 <?php if ($user->profile_image): ?>
@@ -26,10 +27,14 @@
     <dd><?= esc($user->email) ?></dd>
 </dl>
 
-<a href="<?= site_url("/profile/edit") ?>">Edit</a>
+<button class="btn btn-primary m-2 text-white"><a class="text-white" style="text-decoration: none;" href="<?= site_url("/profile/edit") ?>">Edit</a></button>
 
-<a href="<?= site_url("/profile/editpassword") ?>">Change password</a>
+<button class="btn btn-primary m-2"><a  class="text-white" style="text-decoration: none;"href="<?= site_url("/profile/editpassword") ?>">Change password</a></button>
 
-<a href="<?= site_url("/profileimage/edit") ?>">Change profile image</a>
+<button class="btn btn-primary m-2"><a  class="text-white" style="text-decoration: none;" href="<?= site_url("/profileimage/edit") ?>">Change profile image</a></button>
 
+
+
+    </div>
+</section>
 <?= $this->endSection() ?>
