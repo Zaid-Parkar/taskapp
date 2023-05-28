@@ -3,10 +3,11 @@
 <?= $this->section("title") ?>Tasks<?= $this->endSection() ?>
 
 <?= $this->section("content") ?>
-
+<section>
+    <div class="form" style="width:30%; margin: 2%;">
     <h1>Tasks</h1>
     
-    <a href="<?= site_url("/tasks/new") ?>">New task</a>
+    <button class="btn btn-primary m-2"><a class="mbutton" href="<?= site_url("/tasks/new") ?>">New task</a></button>
 
     <div>
         <label for="query">Search</label>
@@ -27,14 +28,15 @@
             <?php endforeach; ?>
         </ul>
 
-        <?= $pager->simpleLinks() ?>
+        <?= $pager->Links() ?>
         
     <?php else: ?>
         
         <p>No tasks found.</p>
         
     <?php endif; ?>
-
+    </div>
+</section>
     <script src="<?= site_url('/js/auto-complete.min.js') ?>"></script>
     
     <script>

@@ -3,8 +3,9 @@
 <?= $this->section('title') ?>Edit profile<?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
-
-<h1>Edit profile</h1>
+<section>
+    <div class="form">
+    <h1>Edit profile</h1>
 
 <p>Please enter your password to continue</p>
 
@@ -12,12 +13,17 @@
 
     <div>
         <label for="password">Password</label>
-        <input type="password" name="password">
+        <input class="form-control" type="password" name="password">
     </div>
     
-    <button>Send</button>
-    <a href="<?= site_url('/profile/show') ?>">Cancel</a>
+    <button class="btn btn-primary m-2">Send</button>
+    <button class="btn btn-primary m-2"><a class="mbutton" href="<?= site_url('/profile/show') ?>">Cancel</a></button>
 
-</form>
+</form> 
+
+
+    </div>
+</section>
+
 
 <?= $this->endSection() ?>

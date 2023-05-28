@@ -1,0 +1,12 @@
+.mbutton{
+    font: 900;
+    text-decoration: none !important;
+    color: white !important;
+   margin: 2px;
+}
+.form{
+    width:50% !important; margin: 2%;
+}
+.fhead{
+    width: 200px;
+}

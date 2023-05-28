@@ -3,8 +3,9 @@
 <?= $this->section('title') ?>Edit password<?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
-
-<h1>Edit password</h1>
+<section>
+    <div class="form">
+    <h1>Edit password</h1>
 
 <?php if (session()->has('errors')): ?>
     <ul>
@@ -18,23 +19,26 @@
 
     <div>
         <label for="current_password">Current password</label>
-        <input type="password" name="current_password">
+        <input class="form-control" type="password" name="current_password">
     </div>
     
     <div>
         <label for="password">New password</label>
-        <input type="password" name="password">
+        <input class="form-control" type="password" name="password">
     </div>
     
     <div>
         <label for="password_confirmation">Repeat new password</label>
-        <input type="password" name="password_confirmation">
+        <input class="form-control" type="password" name="password_confirmation">
     </div>
     
-    <button>Save</button>
-    <a href="<?= site_url("/profile/show") ?>">Cancel</a>
+    <button class="btn btn-primary m-2">Save</button>
+    <button class="btn btn-primary m-2"><a class="mbutton" href="<?= site_url("/profile/show") ?>">Cancel</a>
 
 </form>
+
+    </div>
+</section>
 
 <?= $this->endSection() ?>
 

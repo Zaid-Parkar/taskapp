@@ -3,8 +3,9 @@
 <?= $this->section('title') ?>Edit profile image<?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
-
-<h1>Edit profile image</h1>
+<section>
+    <div class="form">
+    <h1>Edit profile image</h1>
 
 <?= form_open_multipart("/profileimage/update") ?>
 
@@ -13,9 +14,12 @@
         <input type="file" name="image" id="image" />
     </div>
     
-    <button>Upload</button>
-    <a href="<?= site_url("/profile/show") ?>">Cancel</a>
+    <button class="btn btn-primary">Upload</button>
+    <button class="btn btn-primary m-2"><a class="mbutton"  href="<?= site_url("/profile/show") ?>">Cancel</a></button>
     
 </form>
+    </div>
+</section>
+
 
 <?= $this->endSection() ?>

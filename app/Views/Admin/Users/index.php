@@ -3,27 +3,27 @@
 <?= $this->section("title") ?>Users<?= $this->endSection() ?>
 
 <?= $this->section("content") ?>
-
+<section >  <div class="form">
     <h1>Users</h1>
     
-    <a href="<?= site_url("/admin/users/new") ?>">New user</a>
+    <button class="btn btn-primary">  <a class="mbutton"  href="<?= site_url("/admin/users/new") ?>">New user</a></button>
     
     <?php if ($users): ?>
     
         <table>
             <thead>
                 <tr>
-                    <th>Name</th>
-                    <th>email</th>
-                    <th>Active</th>
-                    <th>Administrator</th>
-                    <th>Created at</th>
+                    <th class="fhead">Name</th>
+                    <th class="fhead">email</th>
+                    <th class="fhead">Active</th>
+                    <th class="fhead">Administrator</th>
+                    <th style="width: 400px;"> Created at</th>
                 </tr>
             </thead>
             <tbody>
                 <?php foreach($users as $user): ?>
                 
-                    <tr>
+                    <tr >
                         <td>
                             <a href="<?= site_url("/admin/users/show/" . $user->id) ?>">
                                 <?= esc($user->name) ?>
@@ -39,14 +39,14 @@
             </tbody>
         </table>
 
-        <?= $pager->simpleLinks() ?>
+        <?= $pager->Links() ?>
         
     <?php else: ?>
         
         <p>No users found.</p>
         
-    <?php endif; ?>
-
+    <?php endif; ?></div>
+    </section>
 <?= $this->endSection() ?>
 
 

@@ -4,10 +4,11 @@
 
 <?= $this->section('content') ?>
 
+<section>
+    <div class="form">
+
+<button class="btn btn-primary m-2"><a class="mbutton" href="<?= site_url("/tasks") ?>">&laquo; back to index</a></button>
 <h1>Task</h1>
-
-<a href="<?= site_url("/tasks") ?>">&laquo; back to index</a>
-
 <dl>
     <dt>ID</dt>
     <dd><?= $task->id ?></dd>
@@ -22,7 +23,7 @@
     <dd><?= $task->updated_at ?></dd>
 </dl>
 
-<a href="<?= site_url('/tasks/edit/' . $task->id) ?>">Edit</a>
-<a href="<?= site_url('/tasks/delete/' . $task->id) ?>">Delete</a>
-
+<button class="btn btn-primary" ><a class="mbutton" href="<?= site_url('/tasks/edit/' . $task->id) ?>">Edit</href=></a></button>
+<button class="btn btn-primary m-2"><a class="mbutton" href="<?= site_url('/tasks/delete/' . $task->id) ?>">Delete</></a></button>
+    </div></section>
 <?= $this->endSection() ?>
